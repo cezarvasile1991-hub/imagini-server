@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <script> 
+        (function() {
+            const imagesToPreload = [
+                'admin.png',
+                'button_1.png',
+                'button_2.png',
+                'button_3.png',
+                'button_4.png',
+                'button_5.png',
+                'texture.png',
+                'btn.png',
+                'newlogo.png',
+                'player-info.png',
+                'pannel.png'
+            ];
+            
+            imagesToPreload.forEach(src => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.as = 'image';
+                link.href = src;
+                link.fetchPriority = 'high';
+                document.head.appendChild(link);
+                 
+                const img = new Image();
+                img.src = src;
+            });
+        })();
+    </script>
+    <script src="https://kit.fontawesome.com/1ee8f271b9.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.3.0/css/pro.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=MedievalSharp&family=Ruthie&display=swap" rel="stylesheet">
+    <script src="adminCfg.js"></script>
+    <script src="admin.js"></script>
+</head>
+    <body>   
+        <div class="admin">
+            <div class="navbar-buttons">
+                <div class="btn-data-1"><p></p></div>
+                <div class="btn-data-2"><p></p></div>
+                <div class="btn-data-3"><p></p></div>
+                <div class="btn-data-4"><p></p></div>
+                <div class="btn-data-5"><p></p></div>
+            </div>
+            <p class="container-title"></p>
+            <input type="text" class="search-input" placeholder="">
+            <button class="back-btn"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="admin-home-container" id="admin-home-container"></div>
+            <div class="admin-players-container" id="admin-players-container"></div>
+            <div class="admin-wagons-container" id="admin-wagons-container"></div>
+            <div class="admin-horses-container" id="admin-horses-container"></div>
+            <div class="admin-tickets-container" id="admin-tickets-container"></div>
+            <div class="admin-player-options-container" id="admin-player-options-container">
+            </div>
+            <div class="admin-permissions-container" id="admin-permissions-container"></div>
+            <div class="admin-give-items-container" id="admin-give-items-container"></div>
+            <div class="admin-give-weapons-container" id="admin-give-weapons-container"></div>
+
+            <div class="player-info-container" id="player-info-container"></div>
+            <div class="join-ticket-container" id="join-ticket-container">
+                <div class="chat-messages" id="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="ticket-input" placeholder="">
+                    <button id="send-btn"><i class="fa-sharp fa-solid fa-paper-plane-top"></i></button>
+                </div>
+            </div>
+            <div class="input-data-container" id="input-data-container">
+                <textarea name="" id="input-data" placeholder=""></textarea>
+                <input type="text" id="general-use-input" placeholder="" style="display: none;">
+                <button id="send-data"></button>
+            </div> 
+        </div>
+        <div class="noclip-help" id="noclip-help"></div>
+        <div class="target"></div>
+        <div class="player-ticket-container" id="player-ticket-container">
+            <div class="create-ticket-container" id="create-ticket-container">
+                <div class="create-ticket-messages" id="create-ticket-messages"></div>
+                <div class="create-ticket-input-area">
+                    <input type="text" id="create-ticket-input" placeholder="">
+                    <button id="create-ticket-send-btn"><i class="fa-sharp fa-solid fa-paper-plane-top"></i></button>
+                </div>
+            </div>
+        </div>
+    </body>   
+</html>
